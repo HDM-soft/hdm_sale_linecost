@@ -4,7 +4,7 @@
     "summary": """
         This module extends the sales order line, adding a field with the cost price of each product per quantity.""",
     "description": """
-        Sale LineCost
+        Sale Line Cost
     """,
     "author": "Horacio Montaño",
     "company": "HDMSOFT",
