@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- views/sale_order_linecost_view.xml -->
+<odoo>
+    <record id="view_order_form_inherit_cost" model="ir.ui.view">
+        <field name="name">sale.order.line.form.inherit.cost</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_subtotal']" position="after">
+                <field name="cost_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+  <!-- Vista tipo árbol (listado), donde se ven todas las líneas de venta en la orden -->
+    <record id="view_order_tree_inherit_cost" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.inherit.cost</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_subtotal']" position="after">
+                <field name="cost_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
